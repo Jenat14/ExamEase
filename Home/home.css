@@ -1,0 +1,97 @@
+body {
+    background-color: #C9D7DD;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    margin:0px;
+    background-color: #f7bc1c; /* Header background color */
+    color: #FFFFFF; /* Text color */
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+    text-decoration: none; 
+    color: inherit; /* Keeps the default color */
+}
+a:hover {
+    text-decoration: underline; /* Underline on hover (optional) */
+}
+
+a:active {
+    color: #ff0000; /* Change color on click (optional) */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a {
+    margin-right: 20px;
+    color: #000000; /* Setting link color to black */
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.button {
+    padding: 20px 100px;
+    background-color: #637A9F; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+.button1 {
+    padding: 10px 30px;
+    background-color: #fdf8e9; /* Button background color */
+    color: #000000; /* Button text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button:hover {
+    background-color: #37445b; /* Button background color on hover */
+}
+.button1:hover {
+    background-color: #37445b; /* Button background color on hover */
+}
+
+h1 {
+    text-align: center;
+}
+
+#calendar {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #fdf8e9; /* Calendar background color from the palette */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
