@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Timetable and Study Schedule</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <img src="../images/man.png" alt="Profile Picture">
+            <div class="user-name">Your Name</div>
+        </div>
+        <div class="logout-option">
+            <a href="../index.html" class="button1">Logout</a>
+        </div>
+    </header>
+    <main>
+        <a href="../Time Table/timetable.html" class="button">Add new timetable</a>
+        <a href="../Existing/existing.html" class="button">Your Schedules</a>
+        <a href="" class="button">Connect to Music</a>
+        
+    </main>
+    <h1>Your Exam Timetable</h1>
+   
+    <div id="calendar"></div>
+
+    <script>
+        let exams = [];
+
+        function addExam() {
+            const subject = document.getElementById('subject').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (subject && date && time) {
+                exams.push({ title: subject, start: `${date}T${time}`, allDay: false });
+
+                // Update the calendar
+                $('#calendar').fullCalendar('destroy');
+                initCalendar();
+
+                // Add the exam to the list
+                const examList = document.getElementById('examList');
+                const listItem = document.createElement('li');
+                listItem.textContent = `${subject} - Date: ${date}, Time: ${time}`;
+                examList.appendChild(listItem);
+
+                // Clear input fields
+                document.getElementById('subject').value = '';
+                document.getElementById('date').value = '';
+                document.getElementById('time').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        function initCalendar() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: exams
+            });
+        }
+
+        // Initialize the calendar
+        initCalendar();
+    </script>
+
+</body>
+</html>
