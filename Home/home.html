@@ -11,69 +11,122 @@
     <link rel="stylesheet" href="./home.css">
 </head>
 <body>
-    <header>
-        <div class="user-info">
-            <img src="../images/man.png" alt="Profile Picture">
-            <div class="user-name">Your Name</div>
-        </div>
-        <div class="logout-option">
-            <a href="../index.html" class="button1">Logout</a>
-        </div>
-    </header>
-    <main>
-        <a href="../Time Table/timetable.html" class="button">Add new timetable</a>
-        <a href="../Existing/existing.html" class="button">Your Schedules</a>
-        <a href="./music.html" class="button">Connect to Music</a>
-        
-    </main>
-    <h1>Your Exam Timetable</h1>
-   
-    <div id="calendar"></div>
 
-    <script>
-        let exams = JSON.parse(localStorage.getItem('exams')) || [];
+<header>
+    <div class="user-info">
+        <img src="../images/man.png" alt="Profile Picture">
+        <div class="user-name">Your Name</div>
+    </div>
+    <div class="logout-option">
+        <a href="../index.html" class="button1">Logout</a>
+    </div>
+</header>
+<main>
+    <a href="../Time Table/timetable.html" class="button">Add new timetable</a>
+    <a href="../Existing/existing.html" class="button">Your Schedules</a>
+    <a href="./music.html" class="button">Connect to Music</a>
+    
+</main>
+<h1>Your Exam Timetable</h1>
 
-        function addExam() {
-            const subject = document.getElementById('subject').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
+<div id="calendar"></div>
 
-            if (subject && date && time) {
-                exams.push({ title: subject, start: `${date}T${time}`, allDay: false });
+<!-- Quote popup content -->
+<div id="quote-popup">
+    <div id="quote-content">
+        <h2>Fuel Your Day!</h2>
+        <p id="quote-text"></p>
+        <a href="#" id="close-btn">Close</a>
+    </div>
+</div>
 
-                // Update the calendar
-                $('#calendar').fullCalendar('destroy');
-                initCalendar();
+<script>
+    // Sample array of quotes
+    const quotes = [
+        "We are kept from our goal not by obstacles but by a clear path to a lesser goal.",
+        "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        "The only limit to our realization of tomorrow will be our doubts of today.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "Believe you can and you're halfway there.",
+        "The only way to do great work is to love what you do.",
+        "You miss 100% of the shots you don't take."
+    ];
 
-                // Add the exam to the list
-                const examList = document.getElementById('examList');
-                const listItem = document.createElement('li');
-                listItem.textContent = `${subject} - Date: ${date}, Time: ${time}`;
-                examList.appendChild(listItem);
+    // Function to get a random quote
+    function getRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        return quotes[randomIndex];
+    }
 
-                // Clear input fields
-                document.getElementById('subject').value = '';
-                document.getElementById('date').value = '';
-                document.getElementById('time').value = '';
-            } else {
-                alert('Please fill in all fields.');
-            }
+    // Function to display the popup
+    function showPopup() {
+        const quotePopup = document.getElementById('quote-popup');
+        const quoteText = document.getElementById('quote-text');
+
+        // Set a random quote
+        quoteText.textContent = getRandomQuote();
+
+        // Show the popup
+        quotePopup.style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        const quotePopup = document.getElementById('quote-popup');
+        quotePopup.style.display = 'none';
+    }
+
+    // Display the quote popup when the page loads
+    window.addEventListener('load', showPopup);
+
+    // Close the quote popup when the close button is clicked
+    document.getElementById('close-btn').addEventListener('click', closePopup);
+</script>
+
+<script>
+    let exams = JSON.parse(localStorage.getItem('exams')) || [];
+
+    function addExam() {
+        const subject = document.getElementById('subject').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        if (subject && date && time) {
+            exams.push({ title: subject, start: `${date}T${time}`, allDay: false });
+
+            // Update the calendar
+            $('#calendar').fullCalendar('destroy');
+            initCalendar();
+
+            // Add the exam to the list
+            const examList = document.getElementById('examList');
+            const listItem = document.createElement('li');
+            listItem.textContent = `${subject} - Date: ${date}, Time: ${time}`;
+            examList.appendChild(listItem);
+
+            // Clear input fields
+            document.getElementById('subject').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('time').value = '';
+        } else {
+            alert('Please fill in all fields.');
         }
+    }
 
-        function initCalendar() {
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                events: exams
-            });
-        }
+    function initCalendar() {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: exams
+        });
+    }
 
-        // Initialize the calendar
-        initCalendar();
-    </script>
+    // Initialize the calendar
+    initCalendar();
+</script>
 
 </body>
 </html>
