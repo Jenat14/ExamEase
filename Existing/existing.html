@@ -5,35 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exam Schedule</title>
   <style>
+    body {
+        background-color: #E8C872;
+    }
+    .schedule-btn-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px; 
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
     .schedule-btn {
-      padding: 10px 20px;
+      padding: 40px 80px;
       margin: 5px;
       cursor: pointer;
       border: 1px solid #ccc;
       border-radius: 5px;
-      background-color:#f0f0f0;
+      background-color:#FFF3CF;
+      width: 50%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     .schedule-details {
       display: none;
       margin-top: 10px;
+      background-color: #C9D7DD;
+      width: 50%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     .progress-bar {
       width: 100%;
       background-color: #f0f0f0;
+      
     }
     .progress-bar-inner {
-      background-color: #4caf50;
+      background-color: #637A9F;
       height: 20px;
       text-align: center;
       line-height: 20px;
       color: white;
-    }
+}
   </style>
 </head>
 <body>
 
-<h2>Exam Schedule</h2>
 
+<div class="schedule-btn-container">
+<h1>Exam Schedule</h1>
 <button class="schedule-btn" onclick="showScheduleDetails(1)">EXAM 1</button>
 <div id="schedule-details-1" class="schedule-details">
   <p>Date: March 10, 2024</p>
@@ -66,7 +83,7 @@
     <div id="progress-bar-inner-3" class="progress-bar-inner" style="width: 30%;">30%</div>
   </div>
 </div>
-
+</div>
 <script>
   function showScheduleDetails(scheduleId) {
     var detailsElement = document.getElementById("schedule-details-" + scheduleId);
@@ -91,7 +108,7 @@
     var interval = setInterval(function() {
       var now = new Date().getTime();
       var distance = endTimes[scheduleId] - now;
-      var progress = 100 - ((distance / (1000 * 60 * 60 * 24)) * 100); // Assuming 1 day as full duration
+      var progress = 100 - ((distance / (1000 * 60 * 60 * 24)) * 100); 
 
       if (distance <= 0) {
         clearInterval(interval);
