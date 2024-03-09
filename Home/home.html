@@ -31,7 +31,7 @@
     <div id="calendar"></div>
 
     <script>
-        let exams = [];
+        let exams = JSON.parse(localStorage.getItem('exams')) || [];
 
         function addExam() {
             const subject = document.getElementById('subject').value;
