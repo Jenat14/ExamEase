@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Planner - Home</title>
     <link rel="stylesheet" href="./style.css">
-    <script>
-        function login() {
-            alert('Login successful!');
-            window.location.href = './home/home.html';
-        }
-    </script>
 </head>
 <body>
 
@@ -24,13 +18,13 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
-                <button type="button" onclick="login()">Login</button> <br>
+                <button type="button" onclick="location.href='./home/home.html'">Login</button> <br>
             </form>
         </div>
         <div class="heading-pg">
             <h1>Welcome to ExamEase, your go-to exam planner website!</h1>
             <p>This website helps you manage your exam schedule efficiently. Plan your study sessions and stay organized for better academic success.</p>
-            <button class="about-us-button" onclick="location.href='/about-us.html'">About Us</button>
+            <button class="about-us-button" onclick="location.href='./about.html'">About Us</button>
         </div>
     </div>
 </body>
