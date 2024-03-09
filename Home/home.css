@@ -2,7 +2,36 @@ body {
     background-color: #C9D7DD;
     font-family: Arial, sans-serif;
 }
+#quote-popup {
+    width:700px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #dbdada;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
 
+#quote-content {
+    text-align: center;
+    color:#071c3e
+}
+
+#close-btn {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #f7bc1c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 header {
     margin:0px;
     background-color: #f7bc1c; /* Header background color */
