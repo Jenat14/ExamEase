@@ -31,7 +31,7 @@
 
 <div id="calendar"></div>
 
-<!-- Quote popup content -->
+
 <div id="quote-popup">
     <div id="quote-content">
         <h2>Fuel Your Day!</h2>
@@ -41,7 +41,7 @@
 </div>
 
 <script>
-    // Sample array of quotes
+
     const quotes = [
         "We are kept from our goal not by obstacles but by a clear path to a lesser goal.",
         "Live as if you were to die tomorrow. Learn as if you were to live forever.",
@@ -52,34 +52,34 @@
         "You miss 100% of the shots you don't take."
     ];
 
-    // Function to get a random quote
+    
     function getRandomQuote() {
         const randomIndex = Math.floor(Math.random() * quotes.length);
         return quotes[randomIndex];
     }
 
-    // Function to display the popup
+    
     function showPopup() {
         const quotePopup = document.getElementById('quote-popup');
         const quoteText = document.getElementById('quote-text');
 
-        // Set a random quote
+        
         quoteText.textContent = getRandomQuote();
 
-        // Show the popup
+        
         quotePopup.style.display = 'block';
     }
 
-    // Function to close the popup
+   
     function closePopup() {
         const quotePopup = document.getElementById('quote-popup');
         quotePopup.style.display = 'none';
     }
 
-    // Display the quote popup when the page loads
+    
     window.addEventListener('load', showPopup);
 
-    // Close the quote popup when the close button is clicked
+
     document.getElementById('close-btn').addEventListener('click', closePopup);
 </script>
 
@@ -94,17 +94,16 @@
         if (subject && date && time) {
             exams.push({ title: subject, start: `${date}T${time}`, allDay: false });
 
-            // Update the calendar
+        
             $('#calendar').fullCalendar('destroy');
             initCalendar();
 
-            // Add the exam to the list
             const examList = document.getElementById('examList');
             const listItem = document.createElement('li');
             listItem.textContent = `${subject} - Date: ${date}, Time: ${time}`;
             examList.appendChild(listItem);
 
-            // Clear input fields
+   
             document.getElementById('subject').value = '';
             document.getElementById('date').value = '';
             document.getElementById('time').value = '';
@@ -124,7 +123,7 @@
         });
     }
 
-    // Initialize the calendar
+
     initCalendar();
 </script>
 
