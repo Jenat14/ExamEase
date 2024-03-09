@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Quotes Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        #quote-dialogue {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #637A9F;
+            color: #FFF3CF;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #quote-container {
+            font-size: 18px;
+        }
+
+        #close-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="quote-dialogue">
+        <div id="quote-container"></div>
+        <button id="close-button" onclick="closeDialogue()">Close</button>
+    </div>
+
+    <script>
+        // Motivational quotes array
+        const quotes = [
+            "Believe you can and you're halfway there. -Theodore Roosevelt",
+            "Your time is limited, don't waste it living someone else's life. -Steve Jobs",
+            "Strive not to be a success, but rather to be of value. -Albert Einstein",
+            "The only way to do great work is to love what you do. -Steve Jobs",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. -Winston Churchill",
+            "The future belongs to those who believe in the beauty of their dreams. -Eleanor Roosevelt",
+            "Don't watch the clock; do what it does. Keep going. -Sam Levenson"
+        ];
+
+        // Function to get a random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        // Display the quote dialogue when the page loads
+        const quoteDialogue = document.getElementById('quote-dialogue');
+        const quoteContainer = document.getElementById('quote-container');
+        quoteContainer.innerHTML = getRandomQuote();
+        quoteDialogue.style.display = 'block';
+
+        // Function to close the quote dialogue
+        function closeDialogue() {
+            quoteDialogue.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

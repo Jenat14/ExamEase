@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Planner - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
 
+        .login-container {
+            width: 300px;
+            background-color: #637A9F;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 1100px;
+            top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #F5CCA0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .homepage-content {
+            background: url('/images/backgr.jpg') center/cover fixed; /* Replace 'your-background-image.jpg' with the actual path to your image */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heading-pg {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 10px;
+            color: #FFFFEC;
+            position: relative;
+            right: 360px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #FFF3CF;
+            color: #000000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .about-us-button {
+            background-color: #637A9F;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="homepage-content">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="process-login.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+    
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+    
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="heading-pg">
+            <h1>Welcome to ExamEase, your go-to exam planner website!</h1>
+            <p>This website helps you manage your exam schedule efficiently. Plan your study sessions and stay organized for better academic success.</p>
+            <button class="about-us-button" onclick="location.href='/about-us.html'">About Us</button>
+        </div>
+    </div>
+</body>
+</html>
