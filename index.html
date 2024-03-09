@@ -17,12 +17,12 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            left: 1100px;
+            left: 1000px;
             top: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-right: 100px;
             color: #F5CCA0;
             font-family: 'Times New Roman', Times, serif;
+            max-width: 100%;
         }
 
         .homepage-content {
@@ -31,6 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow-x: hidden;
         }
 
         .heading-pg {
@@ -45,13 +46,14 @@
         input {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
+            margin: 8px;
             box-sizing: border-box;
         }
 
-        button {
+        a{
             background-color: #FFF3CF;
             color: #000000;
+            margin-top: auto;
             padding: 10px 15px;
             border: none;
             border-radius: 3px;
@@ -65,7 +67,7 @@
             border: none;
             border-radius: 3px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 100px;
         }
     </style>
 </head>
@@ -81,7 +83,7 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
     
-                <button type="submit">Login</button>
+                <a href="./Home/home.html" type="submit">Login</a>
             </form>
         </div>
         <div class="heading-pg">
