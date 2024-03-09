@@ -5,7 +5,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         .login-container {
             width: 300px;
             background-color: #637A9F;
@@ -18,7 +18,7 @@
         }
 
         .homepage-content {
-            background:url('/images/backgr.jpg') center/cover fixed;
+            background:url('/images/backgr1.jpg') center/cover fixed;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -28,11 +28,15 @@
         .heading-pg {
             font-size: 20px;
             font-family: 'Times New Roman', Times, serif;
-            color: #FFFFEC;
+            color: #ffffff;
             margin: 20px;
             text-align: center;
         }
 
+        .heading-pg p{
+            font-size: 25px;
+        }
+        
         input {
             width: 100%;
             padding: 10px;
