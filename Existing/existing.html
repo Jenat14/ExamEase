@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Schedule</title>
+  <style>
+    .schedule-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color:#f0f0f0;
+    }
+    .schedule-details {
+      display: none;
+      margin-top: 10px;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+    .progress-bar-inner {
+      background-color: #4caf50;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Exam Schedule</h2>
+
+<button class="schedule-btn" onclick="showScheduleDetails(1)">EXAM 1</button>
+<div id="schedule-details-1" class="schedule-details">
+  <p>Date: March 10, 2024</p>
+  <p>Time: 9:00 AM</p>
+  <p>Subject: Mathematics</p>
+  <p id="countdown-1"></p>
+  <div class="progress-bar">
+    <div id="progress-bar-inner-1" class="progress-bar-inner" style="width: 50%;">50%</div>
+  </div>
+</div>
+
+<button class="schedule-btn" onclick="showScheduleDetails(2)">EXAM 2</button>
+<div id="schedule-details-2" class="schedule-details">
+  <p>Date: March 12, 2024</p>
+  <p>Time: 10:30 AM</p>
+  <p>Subject: Science</p>
+  <p id="countdown-2"></p>
+  <div class="progress-bar">
+    <div id="progress-bar-inner-2" class="progress-bar-inner" style="width: 75%;">75%</div>
+  </div>
+</div>
+
+<button class="schedule-btn" onclick="showScheduleDetails(3)">EXAM 3</button>
+<div id="schedule-details-3" class="schedule-details">
+  <p>Date: March 15, 2024</p>
+  <p>Time: 1:00 PM</p>
+  <p>Subject: History</p>
+  <p id="countdown-3"></p>
+  <div class="progress-bar">
+    <div id="progress-bar-inner-3" class="progress-bar-inner" style="width: 30%;">30%</div>
+  </div>
+</div>
+
+<script>
+  function showScheduleDetails(scheduleId) {
+    var detailsElement = document.getElementById("schedule-details-" + scheduleId);
+    if (detailsElement.style.display === "none") {
+      detailsElement.style.display = "block";
+      startCountdown(scheduleId);
+    } else {
+      detailsElement.style.display = "none";
+    }
+  }
+
+  function startCountdown(scheduleId) {
+    var endTimes = {
+      1: new Date("March 10, 2024 09:00:00").getTime(),
+      2: new Date("March 12, 2024 10:30:00").getTime(),
+      3: new Date("March 15, 2024 13:00:00").getTime()
+    };
+
+    var countdownElement = document.getElementById("countdown-" + scheduleId);
+    var progressBarElement = document.getElementById("progress-bar-inner-" + scheduleId);
+
+    var interval = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = endTimes[scheduleId] - now;
+      var progress = 100 - ((distance / (1000 * 60 * 60 * 24)) * 100); // Assuming 1 day as full duration
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        countdownElement.innerHTML = "Exam Ended";
+        progressBarElement.style.width = "100%";
+        progressBarElement.innerHTML = "100%";
+      } else {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        progressBarElement.style.width = progress + "%";
+        progressBarElement.innerHTML = Math.round(progress) + "%";
+      }
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
+
