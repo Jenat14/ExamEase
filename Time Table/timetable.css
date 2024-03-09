@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+    background-color: #c9d7dd; /* Main background color from the palette */
+}
+
+#content {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #fff3cf; /* Content background color from the palette */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #01070a; /* Label color from the palette */
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #fff; /* Input background color from the palette */
+    border: 1px solid #c9d7dd; /* Input border color from the palette */
+    border-radius: 5px;
+    color: #333; /* Input text color */
+}
+
+button {
+    background-color: #637a9f; /* Button background color from the palette */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#examList, #schedule {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; /* Adjust spacing */
+}
+
+#examList li, #schedule li {
+    margin-bottom: 10px;
+}
+
+#calendar {
+    margin-top: 20px;
+    max-width: 400px; /* Adjust the max-width to your preference */
+    width: 100%;
+    background-color: #fff; /* Calendar background color from the palette */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#schedule th, #schedule td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #fff; /* Table cell background color from the palette */
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
