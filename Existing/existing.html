@@ -64,8 +64,8 @@
 
 <button class="schedule-btn" onclick="showScheduleDetails(2)">EXAM 2</button>
 <div id="schedule-details-2" class="schedule-details">
-  <p>Date: March 12, 2024</p>
-  <p>Time: 10:30 AM</p>
+  <p>Date: March 10, 2024</p>
+  <p>Time: 02:30 PM</p>
   <p>Subject: Science</p>
   <p id="countdown-2"></p>
   <div class="progress-bar">
@@ -75,8 +75,8 @@
 
 <button class="schedule-btn" onclick="showScheduleDetails(3)">EXAM 3</button>
 <div id="schedule-details-3" class="schedule-details">
-  <p>Date: March 15, 2024</p>
-  <p>Time: 1:00 PM</p>
+  <p>Date: March 12, 2024</p>
+  <p>Time: 01:00 PM</p>
   <p>Subject: History</p>
   <p id="countdown-3"></p>
   <div class="progress-bar">
@@ -98,8 +98,8 @@
   function startCountdown(scheduleId) {
     var endTimes = {
       1: new Date("March 10, 2024 09:00:00").getTime(),
-      2: new Date("March 12, 2024 10:30:00").getTime(),
-      3: new Date("March 15, 2024 13:00:00").getTime()
+      2: new Date("March 10, 2024 14:30:00").getTime(),
+      3: new Date("March 12, 2024 13:00:00").getTime()
     };
 
     var countdownElement = document.getElementById("countdown-" + scheduleId);
