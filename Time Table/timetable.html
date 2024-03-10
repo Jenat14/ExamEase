@@ -75,13 +75,13 @@
                 $('#calendar').fullCalendar('destroy');
                 initCalendar();
 
-                // Add the exam to the list
+                
                 const examList = document.getElementById('examList');
                 const listItem = document.createElement('li');
                 listItem.textContent = `${subject} - Date: ${date}, Time: ${time}`;
                 examList.appendChild(listItem);
 
-                // Add the exam to the schedule table
+
                 const scheduleTable = document.getElementById('scheduleTable');
                 const scheduleBody = document.getElementById('scheduleBody');
 
@@ -89,12 +89,12 @@
                 scheduleRow.innerHTML = `<td style='background-color:red'>${subject}</td><td>${date}</td><td>${time}</td>`;
                 scheduleBody.appendChild(scheduleRow);
 
-                // Clear input fields
+            
                 document.getElementById('subject').value = '';
                 document.getElementById('date').value = '';
                 document.getElementById('time').value = '';
 
-                // Clear error message
+                
                 document.getElementById('error-message').textContent = '';
             } else {
                 document.getElementById('error-message').textContent = 'Please fill in all fields with valid data.';
@@ -112,14 +112,14 @@
             if (subject && dateRegex.test(date) && timeRegex.test(time)) {
                 exams.push({ title: subject, start: `${date}T${time}`, allDay: false, color: "#FF0000" });
 
-                // Save data to localStorage
+                
                 saveData();
 
-                // Update the calendar
+                
                 $('#calendar').fullCalendar('destroy');
                 initCalendar();
 
-                // Add the study schedule to the schedule table
+                
                 const scheduleTable = document.getElementById('scheduleTable');
                 const scheduleBody = document.getElementById('scheduleBody');
 
@@ -127,12 +127,12 @@
                 scheduleRow.innerHTML = `<td style='background-color:red'>${subject}</td><td>${date}</td><td>${time}</td>`;
                 scheduleBody.appendChild(scheduleRow);
 
-                // Clear input fields
+                
                 document.getElementById('subject1').value = '';
                 document.getElementById('date1').value = '';
                 document.getElementById('time1').value = '';
 
-                // Clear error message
+               
                 document.getElementById('error-message').textContent = '';
             } else {
                 document.getElementById('error-message').textContent = 'Please fill in all fields with valid data.';
